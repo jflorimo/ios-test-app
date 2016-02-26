@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F005DADB1C7F581E007FE1BE"
+               BlueprintIdentifier = "F0094DF81C804BB200A9BA14"
                BuildableName = "swifty.app"
                BlueprintName = "swifty"
                ReferencedContainer = "container:swifty.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F005DAF41C7F581F007FE1BE"
+               BlueprintIdentifier = "F0094E0C1C804BB200A9BA14"
                BuildableName = "swiftyTests.xctest"
                BlueprintName = "swiftyTests"
                ReferencedContainer = "container:swifty.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F005DAFF1C7F581F007FE1BE"
+               BlueprintIdentifier = "F0094E171C804BB300A9BA14"
                BuildableName = "swiftyUITests.xctest"
                BlueprintName = "swiftyUITests"
                ReferencedContainer = "container:swifty.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F005DADB1C7F581E007FE1BE"
+            BlueprintIdentifier = "F0094DF81C804BB200A9BA14"
             BuildableName = "swifty.app"
             BlueprintName = "swifty"
             ReferencedContainer = "container:swifty.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F005DADB1C7F581E007FE1BE"
+            BlueprintIdentifier = "F0094DF81C804BB200A9BA14"
             BuildableName = "swifty.app"
             BlueprintName = "swifty"
             ReferencedContainer = "container:swifty.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F005DADB1C7F581E007FE1BE"
+            BlueprintIdentifier = "F0094DF81C804BB200A9BA14"
             BuildableName = "swifty.app"
             BlueprintName = "swifty"
             ReferencedContainer = "container:swifty.xcodeproj">
