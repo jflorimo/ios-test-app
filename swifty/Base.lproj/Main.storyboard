@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ehW-da-hzC">
-                                <rect key="frame" x="20" y="20" width="560" height="105"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ehW-da-hzC">
+                                <rect key="frame" x="20" y="80" width="560" height="437"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUR-r6-305">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="21"/>
@@ -32,16 +33,34 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-hp-pRa">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-hp-pRa">
                                         <rect key="frame" x="0.0" y="75" width="55" height="30"/>
                                         <state key="normal" title="Validate"/>
                                         <connections>
                                             <action selector="setLabelLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qA9-32-fXB"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zsu-e8-ku7">
+                                        <rect key="frame" x="0.0" y="117" width="560" height="320"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="vMv-gR-UQT">
+                                                <rect key="frame" x="120" y="0.0" width="320" height="320"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vMv-gR-UQT" secondAttribute="height" multiplier="1:1" id="dPB-bc-XUl"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="YMu-RO-zd2" appends="YES" id="BGh-H4-gPX"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="54b-42-Swt" secondAttribute="trailing" id="rfH-a9-HeW"/>
+                                    <constraint firstItem="Zsu-e8-ku7" firstAttribute="leading" secondItem="ehW-da-hzC" secondAttribute="leading" id="IUZ-CK-fTy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zsu-e8-ku7" secondAttribute="trailing" id="TNM-a4-FIA"/>
+                                    <constraint firstAttribute="trailing" secondItem="54b-42-Swt" secondAttribute="trailing" id="ZKJ-uG-FcS"/>
+                                    <constraint firstItem="54b-42-Swt" firstAttribute="leading" secondItem="ehW-da-hzC" secondAttribute="leading" id="r4Y-Ze-gMx"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -55,11 +74,20 @@
                     <connections>
                         <outlet property="loginLabel" destination="sUR-r6-305" id="gUZ-hH-UZr"/>
                         <outlet property="loginTextField" destination="54b-42-Swt" id="6LM-Gq-D8S"/>
+                        <outlet property="photoView" destination="vMv-gR-UQT" id="XzA-qH-iwe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YMu-RO-zd2">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="IrM-LV-M3Z"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="382" y="604"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="320" height="320"/>
+    </resources>
 </document>
