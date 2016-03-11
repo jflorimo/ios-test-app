@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ehW-da-hzC">
-                                <rect key="frame" x="20" y="80" width="560" height="437"/>
+                                <rect key="frame" x="20" y="80" width="560" height="493"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUR-r6-305">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="21"/>
@@ -55,6 +55,10 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Pmm-g4-3HL" customClass="RatingControl" customModule="swifty" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="449" width="240" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Zsu-e8-ku7" firstAttribute="leading" secondItem="ehW-da-hzC" secondAttribute="leading" id="IUZ-CK-fTy"/>
@@ -75,6 +79,7 @@
                         <outlet property="loginLabel" destination="sUR-r6-305" id="gUZ-hH-UZr"/>
                         <outlet property="loginTextField" destination="54b-42-Swt" id="6LM-Gq-D8S"/>
                         <outlet property="photoView" destination="vMv-gR-UQT" id="XzA-qH-iwe"/>
+                        <outlet property="ratingControl" destination="Pmm-g4-3HL" id="QMN-bU-IPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -84,7 +89,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="382" y="604"/>
+            <point key="canvasLocation" x="732" y="586"/>
         </scene>
     </scenes>
     <resources>
