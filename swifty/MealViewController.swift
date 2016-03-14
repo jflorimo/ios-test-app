@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MealViewController.swift
 //  swifty
 //
 //  Created by Jean-christophe FLORIMONT on 2/26/16.
@@ -15,7 +15,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    var meal: Meal?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +67,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     @IBAction func setLabelLogin(sender: UIButton) {
         loginLabel.text = "buenjour"
+    }
+    
+    //MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveButton === sender {
+            let name = loginTextField.text ?? ""
+            let photo = photoView.image
+            let rating = ratingControl.rating
+            
+            // Set the meal to be passed to MealTableViewController after the unwind segue.
+            meal = Meal(name: name, photo: photo, rating: rating)
+        }
     }
 
     
