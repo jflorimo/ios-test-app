@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+   
     
     var meal: Meal?
 
@@ -25,6 +26,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Do any additional setup after loading the view, typically from a nib.
         
         loginTextField.delegate = self
+        
+        
+        if let meal = meal {
+            navigationItem.title = meal.name
+            loginTextField.text   = meal.name
+            photoView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +65,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     //MARK: Actions
 
+    @IBAction func cancelClick(sender: UIBarButtonItem) {
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+        
+    }
+    
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
         loginTextField.resignFirstResponder()
         let imagePickerController = UIImagePickerController()

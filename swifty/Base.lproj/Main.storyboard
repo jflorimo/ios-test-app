@@ -25,7 +25,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUR-r6-305">
                                         <rect key="frame" x="257" y="0.0" width="47" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54b-42-Swt">
@@ -80,7 +80,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="pXd-sK-VZH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wZs-Qd-cyq"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wZs-Qd-cyq">
+                            <connections>
+                                <action selector="cancelClick:" destination="BYZ-38-t0r" id="TUA-DF-hGL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="04Q-Gc-snm">
                             <connections>
                                 <segue destination="kXx-Lv-hYc" kind="unwind" unwindAction="unwindToMealList:" id="fpe-C9-LWF"/>
@@ -131,7 +135,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-3a-4bq">
                                             <rect key="frame" x="98" y="8" width="494" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ik-oY-n1L" customClass="RatingControl" customModule="swifty" customModuleProvider="target">
@@ -149,6 +153,7 @@
                                     <outlet property="nameLabel" destination="gWY-3a-4bq" id="jxz-dd-5I3"/>
                                     <outlet property="photoImageView" destination="pfx-Qj-Wdw" id="yPM-iM-rkD"/>
                                     <outlet property="ratingControl" destination="9ik-oY-n1L" id="tCi-Dk-zDp"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="5ve-Xv-ysz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -203,10 +208,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUP-YB-vKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1813" y="502"/>
+            <point key="canvasLocation" x="1871" y="964"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="320" height="320"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5ve-Xv-ysz"/>
+    </inferredMetricsTieBreakers>
 </document>

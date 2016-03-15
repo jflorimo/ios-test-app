@@ -16,9 +16,27 @@ class MealTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Load the sample data.
         loadSampleMeals()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print ("##" + segue.identifier!)
+        
+        if segue.identifier == "ShowDetail" {
+            let mealDetailViewController = segue.destinationViewController as! ViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedMealCell = sender as? MealTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedMealCell)!
+                let selectedMeal = meals[indexPath.row]
+                mealDetailViewController.meal = selectedMeal
+            }
+        }
+        else if segue.identifier == "AddItem" {
+            print("Adding new meal.")
+        }
     }
     
     func loadSampleMeals() {
